@@ -1,33 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Tag = (props) => {
+export const Tag = props => {
+    const {
+        children,
+        link,
+        linkto,
+        bck,
+        size,
+        color } = props;
+
     const template = <div
         style={{
-            background: props.bck,
-            fontSize: props.size,
-            color: props.color,
+            background: bck,
+            fontSize: size,
+            color: color,
             padding:'5px 10px',
             display:'inline-block',
             fontFamily:'Righteous'
         }}
     >
-        {props.children}
+        {children}
     </div>
 
-
-    if(props.link){
+    if (link) {
         return (
-            <Link to={props.linkto}>
+            <Link to={linkto}>
                 {template}
             </Link>
         )
-    }else{
+    } else {
         return template
     }
 }
 
-export const firebaseLooper = (snapshot) =>{
+export const firebaseLooper = (snapshot) => {
     const data = [];
     snapshot.forEach((childSnapshot)=>{
         data.push({
@@ -47,7 +54,7 @@ export const reverseArray = (actualArray) =>{
     return reversedArray;
 }
 
-export const validate = (element) =>{
+export const validate = (element) => {
     let error = [true,''];
 
     if(element.validation.email){

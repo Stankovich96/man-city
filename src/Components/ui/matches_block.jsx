@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const MatchesBlock = ({match})=> {
-
+const MatchesBlock = props => {
+    const { match } = props;
+    const { date, final, localThmb, local, resultAway, resultLocal, awayThmb, away } = match;
 
     return (
         <div className="match_block">
@@ -31,6 +33,19 @@ const MatchesBlock = ({match})=> {
             
         </div>
     )
+};
+
+MatchesBlock.propTypes = {
+    match: PropTypes.shape({ 
+        date: PropTypes.string.isRequired,
+        final: PropTypes.bool.isRequired,
+        localThmb: PropTypes.string.isRequired,
+        local: PropTypes.string.isRequired,
+        resultAway: PropTypes.number.isRequired,
+        resultLocal: PropTypes.number,
+        awayThmb: PropTypes.string,
+        away: PropTypes.string
+    })
 }
 
 export default MatchesBlock;

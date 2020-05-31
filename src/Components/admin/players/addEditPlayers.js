@@ -4,7 +4,7 @@ import AdminLayout from '../../../hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
 
-import Fileuploader from '../../ui/fileuploader';
+import Fileuploader from '../../ui/FileUploader';
 import { firebasePlayers, firebaseDB, firebase } from '../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
 
