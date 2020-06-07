@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { easePolyOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
 import Otamendi from '../../../Resources/images/players/Otamendi.png';
 import PlayerCard from '../../ui/playerCard';
 
-class HomeCards extends Component {
-
-    state = {
+const HomeCards = (props) => {
+    const { show } = props;
+    const [state, setState] = useState({
         Cards:[
             {
                 bottom:90,
@@ -25,12 +25,13 @@ class HomeCards extends Component {
                 left:0
             },
         ]
-    }
-    showAnimateCards = () =>(
-        this.state.Cards.map((card,i)=>(
+    });
+
+    const showAnimateCards = () => (
+        state.Cards.map((card,i) => (
             <Animate
                 key={i}
-                show={this.props.show}
+                show={show}
 
                 start={{
                     left:0,
@@ -63,14 +64,11 @@ class HomeCards extends Component {
             </Animate>
         ))
     )
-
-    render() {
-        return (
-            <div>
-              {this.showAnimateCards()}  
-            </div>
-        );
-    }
+    return (
+        <div>
+          {showAnimateCards()}  
+        </div>
+    );
 }
 
 export default HomeCards
