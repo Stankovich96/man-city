@@ -13,6 +13,14 @@ const FileUploaderComponent = props => {
         isUploading: false,
         fileURL: defaultImg
     });
+
+    useEffect(() => {
+        setFileUploaderState({
+            ...FileUploaderState,
+            name: defaultImgName,
+            fileURL: defaultImg
+        })
+    }, [FileUploaderState, defaultImg, defaultImgName])
     
     const { name, isUploading, fileURL } = FileUploaderState;
     const handleSetState = (newState) => setFileUploaderState({

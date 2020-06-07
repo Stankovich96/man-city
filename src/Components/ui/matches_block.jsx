@@ -37,15 +37,15 @@ const MatchesBlock = props => {
 
 MatchesBlock.propTypes = {
     match: PropTypes.shape({ 
-        date: PropTypes.string.isRequired,
-        final: PropTypes.bool.isRequired,
-        localThmb: PropTypes.string.isRequired,
-        local: PropTypes.string.isRequired,
-        resultAway: PropTypes.number.isRequired,
-        resultLocal: PropTypes.number,
+        date: PropTypes.string,
+        final: PropTypes.string,
+        localThmb: PropTypes.string,
+        local: PropTypes.string,
+        resultAway: PropTypes.string,
+        resultLocal: PropTypes.string,
         awayThmb: PropTypes.string,
         away: PropTypes.string
-    })
+    }).isRequired
 }
 
 export default MatchesBlock;
